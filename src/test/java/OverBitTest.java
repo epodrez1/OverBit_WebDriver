@@ -30,14 +30,12 @@ public class OverBitTest {
     @Test
     public void findNewOrderTest() {
         int numOrderBeforeAdd = overBitPage.countOrder();
-        System.out.println(numOrderBeforeAdd);
         int numOrderAfterAdd;
         overBitPage.clickCheckBoxProfit()
                 .clickBuyBTC()
                 .clickConfirmOrder()
                 .checkOrder();
         numOrderAfterAdd = overBitPage.countOrder();
-        System.out.println(numOrderAfterAdd);
 
         Assert.assertEquals(numOrderAfterAdd - numOrderBeforeAdd, 1);
     }
